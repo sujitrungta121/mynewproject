@@ -1,31 +1,65 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from "react";
+import { MdArrowRight } from "react-icons/md";
 
 type DropDownProps = {
-  dropDownItem: string[];
-  setDropDown: React.Dispatch<React.SetStateAction<boolean>>;
+  dropDownItem: any[];
+  topValue: number;
+  rightValue: number;
+  position: string;
+  border: boolean;
+  bottomValue: number;
 };
 
-const DropDown: React.FC<DropDownProps> = ({ dropDownItem, setDropDown }) => {
-  const handleMouseEnter = () => {
-    console.log("mouse entered")
-    setDropDown(true);
-  };
+const DropDown: React.FC<DropDownProps> = ({
+  dropDownItem,
+  bottomValue,
+  topValue,
+  rightValue,
+  position,
+  border,
+}) => {
+  const [hoverItem, setHoverItem] = useState<number | null>(null);
 
-  const handleMouseLeave = () => {
-    console.log("mouse leave")
-
-    setDropDown(false);
+  const getPositionStyle = () => {
+    if (position === "top") {
+      return { top: `${topValue}px`, right: `${rightValue}%` };
+    } else if (position === "bottom") {
+      return { bottom: `${bottomValue}px`, right: `${rightValue}px` };
+    } else {
+      return {};
+    }
   };
 
   return (
     <main
-      className="bg-white z-2 flex flex-col absolute top-6 right-6 w-40 gap-2 visible  p-2"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className={`bg-white shadow-md rounded flex flex-col  visible absolute  w-40  z-40   p-2 `}
+      style={getPositionStyle()}
     >
-      {dropDownItem.map((item) => (
-        <div key={item} className="border-b p-2">
-          <span className="text-sm">{item}</span>
+      {dropDownItem?.map((item) => (
+        <div
+          key={item.id}
+          className={`${
+            border ? "border-b" : "border-none"
+          } hover:bg-gray-600 flex flex-row justify-between p-2 hover:color-white`}
+          onMouseEnter={() => {
+            setHoverItem(item.id);
+            console.log(hoverItem, "in the dropdown");
+          }}
+          onMouseLeave={() => {
+            setHoverItem(null);
+          }}
+        >
+          <span className="text-sm">{item.title}</span>
+          {hoverItem === item.id && item?.content && (
+            <DropDown
+              rightValue={-98}
+              position="top"
+              dropDownItem={item?.content}
+            />
+          )}
+          {item.sideArrow && <MdArrowRight />}
         </div>
       ))}
     </main>

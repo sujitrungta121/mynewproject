@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import Navbar from './components/navbar'
-import Body from './components/body'
-import Footer from './components/footer'
-import Main from './components/Main'
+import Navbar from './common/navbar'
+import Body from './components/HomePage/body'
+import Footer from './common/footer'
+import Main from './components/HomePage'
 
 export default function Home() {
   return (
