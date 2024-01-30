@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Category(){
     const [hoverId,setHoverId]=useState(-1);
     return (
-        <main className="flex flex-col gap-16 lg:pl-32 lg:pr-32 pt-8 md:pl-0 sm:pl-2 pl-2 md:pr-0 pr-0">
+        <main className="flex flex-col gap-16 2xl:pl-32  lg:pl-32 lg:pr-32 pt-8 md:pl-0 p-2 md:pr-0 ">
        
                 <div className="flex xl:flex-row lg:flex-row md:flex-row 2xl:flex-row sm:flex-col flex-col gap-4  justify-between">
                   <div className="flex flex-col gap-1">
@@ -21,10 +21,10 @@ export default function Category(){
 
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-6 w-full">
+                <div className="  w-full gap-8 grid xl:grid-cols-4 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2  grid-cols-1 ">
   {categoriesData?.map((item) => (
-    <div key={item.id} className="sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 flex xl:flex-row md:flex-row lg:flex-row 2xl:flex-row sm:flex-col flex-col gap-4 items-center mb-8 " onMouseEnter={()=>setHoverId(item.id)} onMouseLeave={()=>setHoverId(-1)}>
-      <Image src={item.image} alt="not image" width={100} height={80} />
+    <div key={item.id} className=" flex xl:flex-row md:flex-row lg:flex-row 2xl:flex-row sm:flex-col flex-col gap-4 xl:items-center  md:items-center justify-center lg:items-center 2xl:items-center  mb-8 " onMouseEnter={()=>setHoverId(item.id)} onMouseLeave={()=>setHoverId(-1)}>
+      <Image src={item.image} alt="not image" width={100} height={80} className=" "/>
       <div className="flex flex-col ">
         <span  className={`w-full  font-600 flex hover:cursor-pointer items-center transition-colors ${
             hoverId === item.id ? 'text-blue-500' : 'text-black'}`}>{item.title}</span>

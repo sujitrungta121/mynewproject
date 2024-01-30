@@ -7,7 +7,7 @@ import companyData from "../../common/metadata/company_data";
 
 export default function About({open,backgroundColor}:{open:boolean,backgroundColor:String}){
     return (
-      <main className="border-b pb-20">
+      <main className="border-b pb-20 ">
         <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col lg:w-[80%] xl:w-[80%] relative h-[50rem] xl:items-center  w-full md:w-full sm:w-full md:pl-0 sm:pl-0 bg-red-100 xl:pt-32 pt-8 pl-8 lg:pt-32 2xl:pt-32  xl:pl-44 pb-32" style={{backgroundColor}}> 
 
        <div className="flex flex-row sm:gap-16 xl:items-center lg:items-center  ">
@@ -36,8 +36,8 @@ export default function About({open,backgroundColor}:{open:boolean,backgroundCol
 
    
 
-        <div className="absolute xl:bottom-[10%] xl:right-[-20%] mb-16   lg:mb-0 xl:mb-0 lg:right-[-20%] lg:top-[10%] top-[60%]  h-full md:right-[5%] md:top-[2%] xl:w-[60%] lg:w-[60%]  md:w-[50%] sm:top-[38%]   sm:mb-32 ">
-          <img src="/header-images/girl_image.png"  className="md:w-[100%] relative" />
+        <div className="absolute xl:bottom-[10%] xl:right-[-20%] mb-16 top-[80%]  lg:mb-0 xl:mb-0 lg:right-[-20%] lg:top-[10%]   h-full md:right-[5%] md:top-[2%] xl:w-[60%] lg:w-[60%]  md:w-[50%] sm:top-[38%]   sm:mb-32 ">
+          <img src="/header-images/girl_image.png"  className="md:w-[100%] w-full" />
       
         </div>
         </div>   

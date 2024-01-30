@@ -23,7 +23,7 @@ export default function Body(){
         button1:true,
         button2:false,
         button1Content:"join now",
-        image:"/College-Fresher.jpg"
+        image:"/assets/College-Fresher.jpg"
     }
     return(
         <main>

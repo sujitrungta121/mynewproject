@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import CallForm from "./callForm";
 import Modal from "react-modal"
 
-export default function MobileNav({data,setMobileNav,setOpenModal,setLogin,setSignUp}:{data:any[],setMobileNav:React.Dispatch<React.SetStateAction<boolean>>,setLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenModal:React.Dispatch<React.SetStateAction<boolean>>,setSignUp:React.Dispatch<React.SetStateAction<boolean>>}){
+export default function MobileNav({data,setMobileNav}:{data:any[],setMobileNav:React.Dispatch<React.SetStateAction<boolean>>}){
     const [openMenu,setOpenMenu]=useState(false)
     const [openInnerMenu,setOpenInnerMenu]=useState<number | null>(null)
     const [openModal, setModalOpen] = useState(false);

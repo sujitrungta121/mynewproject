@@ -38,7 +38,7 @@ interface DemoSliderProps {
 
   return (
   
-      <div className="w-full xl:ml-32 lg:ml-32 md:ml-32 sm:ml-28 ml-20 ">
+      <div className="w-full xl:ml-32 lg:ml-32 md:ml-32 ">
    
           <Swiper
             navigation
@@ -52,27 +52,27 @@ interface DemoSliderProps {
               }}
            
             modules={[ Autoplay,Navigation, Pagination]}
-            className="items-center"
+            className="items-center w-full"
             
           >
             
                             {data.map(( item ) => (
 
               <SwiperSlide key={item?.id}>
-                <div className="border bg-white lg:w-[60%] md:w-[80%] sm:w-[80%] w-full">
+                <div className="border bg-white lg:w-[60%] md:w-[80%]  w-full">
                   <img src={item.image} alt="no image" className="w-full object-fit"/>
-                  <div className="flex flex-col gap-2 pl-12 pb-7">
+                  <div className="flex flex-col gap-2 xl:pl-12 2xl:pl-12 md:pl-12 lg:pl-12 sm:pl-4  pb-7 w-full">
                     <div>
-                    <span className="text-gray-600 text-sm">{item.services}</span>
+                    <span className="text-gray-600 xl:text-sm lg:text-sm md:text-sm sm:text-xs text-xs">{item.services}</span>
                     
                     </div>
-                    <span className="text-base font-medium">{item.description}</span>
+                    <span className="xl:text-base md:text-base lg:text-base 2xl:text-base sm:text-sm text-xs font-medium">{item.description}</span>
                     <div className="flex flex-row gap-2 items-center">
                       <div className="flex flex-row gap-1 items-center">
                       <MdStar color="yellow" />
-                      <span className="font-medium text-sm">{item.ratings}</span>
+                      <span className="font-medium 2xl:text-sm xl:text-sm lg:text-sm md:text-sm sm:text-xs text-xs">{item.ratings}</span>
                       </div>
-                      <span className="text-gray-600 text-sm">({item.reviews} reviews)</span>
+                      <span className="text-gray-600 2xl:text-sm xl:text-sm lg:text-sm md:text-sm sm:text-xs text-xs">({item.reviews} reviews)</span>
                     </div>
 
                   </div>

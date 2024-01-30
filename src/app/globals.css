@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+.bannr-content-bg{
+  background: linear-gradient(236deg,hsla(0,0%,100%,0),#040c1f 62%);
+}
+

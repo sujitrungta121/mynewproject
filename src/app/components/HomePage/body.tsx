@@ -70,8 +70,8 @@ export default function Body(){
 
       <div className="flex xl:flex-row lg:flex-row md:flex-row 2xl:flex-row flex-col pt-4 gap-2 bg-white border justify-between xl:p-5 lg:p-5 md:p-5 sm:p-2 p-1 xl:w-[40%] lg:w-[40%] md:w-[40%] w-full">
         <input type="email" placeholder="your email address" className="focus:outline-none border-none xl:text-base lg:text-base md:text-base w-[50%] text-xs"/>
-        <div className="bg-emerald-900 xl:p-2 lg:p-2 md:p-2 sm:p-1 p-1 rounded-md">
-          <span className="text-white xl:font-semibold lg:font-semibold md:font-semibold text-sm">send</span>
+        <div className="bg-emerald-900 xl:p-2 lg:p-2 md:p-2 sm:p-1 p-1 rounded-md  justify-center flex ">
+          <span className="text-white xl:font-semibold lg:font-semibold md:font-semibold 2xl:text-sm xl:text-sm md:text-sm lg:text-sm text-base text-base">send</span>
         </div>
       </div>
     </div>
