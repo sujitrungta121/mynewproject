@@ -51,7 +51,7 @@ export default function Body(){
      
       <div className="flex-grow">
 
-      <About open={true}/>
+      <About open={true} backgroundColor=""/>
       </div>
       <Testimonals/>
       <TrendingServices/>
@@ -60,7 +60,7 @@ export default function Body(){
 
   
 
-  <TrustingCompanies/>
+  <TrustingCompanies border={false}/>
 
     <div className="bg-amber-50 flex flex-col xl:justify-center lg:justify-center xl:items-center lg:items-center md:items-center lg:p-24 md:p-24 sm:p-4 p-4  xl:p-24 gap-4">
       <div className="flex flex-col items-center justify-center gap-4">

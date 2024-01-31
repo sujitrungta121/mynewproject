@@ -15,9 +15,9 @@ export default function CompaniesZone(){
     return (
         <main>
             {openMobileNav && <MobileNav data={navData} setMobileNav={setOpenMobileNav}/>}
-            <Navbar backgroundColor="black" setMobileNav={setOpenMobileNav}/>
+            <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setOpenMobileNav}/>
             <Body/>
-            <Footer backgroundColor="black"/>
+            <Footer BackgroundColor="rgb(0,0,0)"/>
         </main>
     )
 }

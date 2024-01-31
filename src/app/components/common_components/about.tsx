@@ -8,7 +8,7 @@ import companyData from "../../common/metadata/company_data";
 export default function About({open,backgroundColor}:{open:boolean,backgroundColor:String}){
     return (
       <main className="border-b pb-20 ">
-        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col lg:w-[80%] xl:w-[80%] relative h-[50rem] xl:items-center  w-full md:w-full sm:w-full md:pl-0 sm:pl-0 bg-red-100 xl:pt-32 pt-8 pl-8 lg:pt-32 2xl:pt-32  xl:pl-44 pb-32" style={{backgroundColor}}> 
+        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col lg:w-[80%] xl:w-[80%] relative h-[50rem] xl:items-center  w-full md:w-full sm:w-full md:pl-0 sm:pl-0 bg-red-100 xl:pt-32 pt-8 pl-8 lg:pt-32 2xl:pt-32  xl:pl-44 pb-32" style={{backgroundColor: backgroundColor && `${backgroundColor}` }}> 
 
        <div className="flex flex-row sm:gap-16 xl:items-center lg:items-center  ">
         

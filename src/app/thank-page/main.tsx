@@ -24,11 +24,11 @@ export default function MainPage(){
 
 {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
 
-            <Navbar backgroundColor="black" setMobileNav={setMobileNav} />
+            <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setMobileNav} />
 
             <ResponsePage data={data}/>
 
-             <Footer backgroundColor="black"/>
+             <Footer BackgroundColor="rgb(0,0,0)"/>
         </main>
     )
 }

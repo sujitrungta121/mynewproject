@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { MdArrowRight } from "react-icons/md";
 
 type DropDownProps = {
-  dropDownItem: any[];
+  dropDownItem: any;
   topValue: number;
   rightValue: number;
   position: string;
@@ -30,14 +30,14 @@ const DropDown: React.FC<DropDownProps> = ({
     } else {
       return {};
     }
-  };
+  }
 
   return (
-    <main
-      className={`bg-white shadow-md rounded flex flex-col  visible absolute  w-40  z-40   p-2 `}
-      style={getPositionStyle()}
-    >
-      {dropDownItem?.map((item) => (
+    <div className={`bg-white shadow-md rounded flex flex-col visible absolute w-40 z-40 p-2 `}
+       style={getPositionStyle()}>
+     
+    
+      {dropDownItem?.map((item:any) => (
         <div
           key={item.id}
           className={`${
@@ -54,7 +54,10 @@ const DropDown: React.FC<DropDownProps> = ({
           <span className="text-sm">{item.title}</span>
           {hoverItem === item.id && item?.content && (
             <DropDown
-              rightValue={-98}
+            topValue={0}
+            border={false}
+            bottomValue={0}
+              rightValue={-96}
               position="top"
               dropDownItem={item?.content}
             />
@@ -62,7 +65,7 @@ const DropDown: React.FC<DropDownProps> = ({
           {item.sideArrow && <MdArrowRight />}
         </div>
       ))}
-    </main>
+    </div>
   );
 };
 

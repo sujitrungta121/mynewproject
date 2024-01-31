@@ -4,15 +4,31 @@ import { Span } from "next/dist/trace";
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
-export default function ContactForm({heading,description,boxshadow,buttonContent,setModalOpen}:{heading:String,description:String,boxshadow:boolean,buttonContent:String,setModalOpen:React.Dispatch<React.SetStateAction<boolean>>}) {
+interface ErrorType {
+  [key: string]: String; 
+}
+interface FormData {
+  name: string;
+  email: string; 
+  message: string;
+ 
+}
 
-  const [formData,setFormData]=useState({
-    name:"",
-    email:"",
-    message:""
-  })
 
-  const [error,setError]=useState({});
+const initialFormData: FormData = {
+  name: "",
+  email: "",
+
+  message: "",
+ 
+};
+
+export default function ContactForm({heading,description}:{heading:String,description:String}) {
+
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+
+
+  const [error, setError] = useState<ErrorType>({});
 
 
 
@@ -35,29 +51,32 @@ export default function ContactForm({heading,description,boxshadow,buttonContent
 
    
     const newErrors = {};
-    Object.keys(formData).forEach((key) => {
-      if (!formData[key] && e.target.name!=="message") {
-        newErrors[key] = `${
-          key.charAt(0).toUpperCase() + key.slice(1)
-        } cannot be empty`;
-      }
-    });
-    setError(newErrors);
+  }
+  //   Object.keys(formData).forEach((key) => {
+  //     if (!formData[key] && e.target.name!=="message") {
+  //       newErrors[key] = `${
+  //         key.charAt(0).toUpperCase() + key.slice(1)
+  //       } cannot be empty`;
+  //     }
+  //   });
+  //   setError(newErrors);
 
    
-    if (Object.keys(newErrors).length === 0) {
+  //   if (Object.keys(newErrors).length === 0) {
   
-      console.log("Form submitted:", formData);
-    }
-  };
+  //     console.log("Form submitted:", formData);
+  //   }
+  // };
 
-  const handleBlur=(e)=>{
+  const handleBlur=(e:any)=>{
     const nameField=e.target.name;
      if(e.target.value==="" && error[nameField])e.target.style.borderColor="red";
      e.target.style.borderColor="black"
   }
   return (
-    <main className="bg-white shadow-md sm:shadow-lg  rounded-md  mb-16  2xl:absolute xl:absolute lg:absolute md:top-[7%] md:right-[0%] lg:top-[8%] lg:right-0 2xl:right-[10%] 2xl:top-[12%] xl:top-[8%] xl:right-[2%] p-8" style={{ boxShadow :boxshadow && 'none'}}>
+    <main className="bg-white shadow-md sm:shadow-lg  rounded-md  mb-16  2xl:absolute xl:absolute lg:absolute md:top-[7%] md:right-[0%] lg:top-[8%] lg:right-0 2xl:right-[10%] 2xl:top-[12%] xl:top-[8%] xl:right-[2%] p-8"
+ 
+    >
       <div>
         <div className="flex flex-col gap-2">
         {heading && <h2 className="text-xl font-bold">{heading}</h2>}
@@ -118,7 +137,7 @@ export default function ContactForm({heading,description,boxshadow,buttonContent
             <textarea
               id="message"
               name="message"
-              rows="12"
+              rows={12}
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -143,96 +162,3 @@ export default function ContactForm({heading,description,boxshadow,buttonContent
 }
 
 
-// "use client";
-
-// import { useState } from "react";
-
-// export default function MyForm() {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     password: "",
-//   });
-//   const [errors, setErrors] = useState({});
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     // Check for empty fields
-//     const newErrors = {};
-//     Object.keys(formData).forEach((key) => {
-//       if (!formData[key]) {
-//         newErrors[key] = `${
-//           key.charAt(0).toUpperCase() + key.slice(1)
-//         } cannot be empty`;
-//       }
-//     });
-//     setErrors(newErrors);
-
-//     // If no errors, submit the form
-//     if (Object.keys(newErrors).length === 0) {
-//       // Perform form submission here
-//       console.log("Form submitted:", formData);
-//     }
-//   };
-
-//   const handleFocus = (e) => {
-//     // Change input color to red on focus
-//     console.log("blurred");
-//     if (e.target.value === "") e.target.style.borderColor = "red";
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label>
-//           Name:
-//           <input
-//             type="text"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             onBlur={handleFocus}
-//           />
-//         </label>
-//         {errors.name && <span style={{ color: "red" }}>{errors.name}</span>}
-//       </div>
-//       <div>
-//         <label>
-//           Email:
-//           <input
-//             type="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             onFocus={handleFocus}
-//           />
-//         </label>
-//         {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
-//       </div>
-//       <div>
-//         <label>
-//           Password:
-//           <input
-//             type="password"
-//             name="password"
-//             value={formData.password}
-//             onChange={handleChange}
-//             onFocus={handleFocus}
-//           />
-//         </label>
-//         {errors.password && (
-//           <span style={{ color: "red" }}>{errors.password}</span>
-//         )}
-//       </div>
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// }

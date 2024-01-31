@@ -20,10 +20,10 @@ export default function Main() {
     <main className="flex w-full  flex-col  ">
                {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
 
-      <Navbar setMobileNav={setMobileNav}/>
+      <Navbar setMobileNav={setMobileNav} backgroundColor=""/>
       <Header/>
       <Body />
-      <Footer/>
+      <Footer BackgroundColor=""/>
     </main>
   )
 }

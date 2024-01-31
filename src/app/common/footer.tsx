@@ -19,7 +19,10 @@ import { useEffect, useState } from "react";
 import DropDown from "./dropDown";
 
 
-export default function Footer( {backgroundColor }:{backgroundColor:String}) {
+export default function Footer({ BackgroundColor }: { BackgroundColor: String }) 
+
+
+ {
 
   const [showLanguage,setShowLanguage]=useState(false)
 
@@ -42,7 +45,11 @@ export default function Footer( {backgroundColor }:{backgroundColor:String}) {
   ]
  
   return (
-    <main className={` bg-emerald-900 flex flex-col p-4 sm:flex-col md:flex-col gap-4  lg:pl-20 lg:pr-20 lg:pt-4 pb-4`} style={{backgroundColor}}>
+    <main className={` flex flex-col p-4 sm:flex-col md:flex-col gap-4  lg:pl-20 lg:pr-20 lg:pt-4 pb-4`} 
+    // style={{ backgroundColor: BackgroundColor? BackgroundColor : "emerald" }}
+    style={{backgroundColor:BackgroundColor? `${BackgroundColor}`:"rgb(6 78 59)"}}
+
+    >
       <div className="flex lg:flex-row flex-col gap-4 sm:gap-4 md:gap-4 lg:items-center justify-between border-b pb-3">
         <div className="flex gap-4">
           <span className="text-white text-base  ">
@@ -90,8 +97,8 @@ export default function Footer( {backgroundColor }:{backgroundColor:String}) {
 
         <div className="flex flex-col sm:gap-2 gap-8">
           <span className="text-white text-base font-semibold">Subscribe</span>
-          <div className={`flex p-4 justify-between ${backgroundColor==="black" ?  "bg-slate-700":'bg-emerald-800'}`}>
-            <input type="email" placeholder="your email address" className={`focus:outline-none focus:border-none text-xs ${backgroundColor ?"bg-slate-700 ":" bg-emerald-800"} xl:w-full lg:w-full md:w-full sm:w-[70%] w-[60%]`}/>
+          <div className={`flex p-4 justify-between ${BackgroundColor==="black" ?  "bg-slate-700":'bg-emerald-800'}`}>
+            <input type="email" placeholder="your email address" className={`focus:outline-none focus:border-none text-xs ${BackgroundColor ?"bg-slate-700 ":" bg-emerald-800"} xl:w-full lg:w-full md:w-full sm:w-[70%] w-[60%]`}/>
             <span className="text-white">send</span>
           </div>
           <div className="flex flex-col gap-2">
@@ -119,10 +126,10 @@ export default function Footer( {backgroundColor }:{backgroundColor:String}) {
           </span>
           <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs text-xs">Developed by iekmasolutions</span>
         </div>
-       <div onClick={()=>{console.log(showLanguage);setShowLanguage(true)}}className={`flex relative w-[20%] lg:w-[10%] sm:w-full w-full md:w-[10%] gap-2 items-center justify-center ${backgroundColor? "bg-slate-700": "bg-emerald-800"} p-4 hover:cursor-pointer`} onMouseEnter={()=>setShowLanguage(true)} onMouseLeave={()=>setShowLanguage(false)}>
+       <div onClick={()=>{console.log(showLanguage);setShowLanguage(true)}}className={`flex relative w-[20%] lg:w-[10%] sm:w-full w-full md:w-[10%] gap-2 items-center justify-center ${BackgroundColor? "bg-slate-500": "bg-emerald-800"} p-4 hover:cursor-pointer`} onMouseEnter={()=>setShowLanguage(true)} onMouseLeave={()=>setShowLanguage(false)}>
         <span>English</span>
         <IoMdArrowDropup/>
-        {showLanguage && <DropDown bottomValue={30} rightValue={10} border={true} position="bottom" dropDownItem={language} setDropDown={setShowLanguage}/>}
+        {showLanguage && <DropDown bottomValue={30} rightValue={10} border={true} topValue={0} position="bottom" dropDownItem={language} />}
 
        </div>
       </div>

@@ -10,7 +10,7 @@ export default function Header(){
         <main className="flex flex-row relative">
 
  <div className="flex w-full sm:w-full md:w-full lg:w-[70%] xl:w-[60%]  bg-amber-50 lg:bg-white xl:bg-white sm:bg-amber-50 p-4 md:pl-0 ">
-             <div className="flex flex-col gap-4 md:pl-4 sm:w-full  pl-0  md:items-center  justify-center z-20 xl:pt-32 lg:pt-32 sm:pt-2 pt-2 lg:pl-20">
+             <div className="flex flex-col gap-4 md:pl-4 sm:w-full  pl-0  md:items-center  justify-center  xl:pt-32 lg:pt-32 sm:pt-2 pt-2 lg:pl-20">
       <div className="flex flex-col gap-2">
       <span className="text-emerald-900 font-bold xl:text-4xl lg:text-4xl text-base  md:text-4xl    lg:items-center ">With talented <strong className="text-green-500 xl:text-4xl lg:text-4xl md:text-4xl  text-base">Freelancers</strong> Do more work</span>
       <span className="text-xs sm:text-xs lg:text-base xl:text-base md:text-base ">Millions of people use freeio.com to turn their ideas into reality.</span>

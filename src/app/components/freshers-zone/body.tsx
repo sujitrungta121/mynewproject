@@ -30,7 +30,7 @@ export default function Body(){
              <Modal
 
 isOpen={modalOpen}
-onRequestClose={modalOpen}
+onRequestClose={()=>setModalOpen(false)}
 contentLabel="Example Modal"
 
 className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative shadow-md   px-8 py-16 xl:w-[25%] lg:w-[30%] md:w-[30%] border-0 sm:w-full w-full bg-white"
@@ -41,7 +41,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
 
  
 
-  <CallForm setModalOpen={setModalOpen} heading="Want To join" fieldsToShow={['name','email','message','phone']}/>
+  <CallForm setModalOpen={setModalOpen} setOpenLogin={()=>{ return null}} setOpenSignUp={()=>{return null}}heading="Want To join" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
            <Header bodyData={data} setModalOpen={setModalOpen}/>
 
@@ -50,7 +50,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
             <Category/>
            
            </div>
-           <FAQ/>
+           <FAQ backgroundColor=""/>
            <TrustingCompanies border={false}/>
         </main>
     )

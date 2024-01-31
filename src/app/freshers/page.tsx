@@ -1,4 +1,4 @@
-import Freshers from "../components/Freshers";
+
 import FreshersZone from "../components/freshers-zone";
 
 

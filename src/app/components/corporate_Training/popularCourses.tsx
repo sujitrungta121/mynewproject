@@ -13,7 +13,7 @@ export default function PopularCourses(){
                 {
                     popularCourses.map((item)=>{
                         return(
-                           <div className="flex flex-col gap-2">
+                           <div className="flex flex-col gap-2" key={item.id}>
 
                             <item.icon className="xl:h-full xl:w-full 2xl:w-full 2xl:h-full lg:w-full lg:h-full md:w-full md:h-full sm:w-[50%] w-[50%] h-[50%]" size={100} color={item.color} />
                             <span className="xl:text-xl 2xl:text-xl lg:text-xl md:text-xl sm:text-base text-sm xl:font-medium 2xl:font-medium lg:font-medium md:font-medium ">{item.title}</span>

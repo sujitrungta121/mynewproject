@@ -1,18 +1,14 @@
-"use client"; // <===== REQUIRED
+"use client"; 
 
 import React from "react";
 
-// Swiper components, modules and styles
+
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { MdStar } from "react-icons/md";
-
-// Our custom button component
-import SliderButtons from "./SliderButtons";
-import Image from "next/image";
 
 interface Slide {
   id: number;

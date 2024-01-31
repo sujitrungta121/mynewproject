@@ -26,12 +26,24 @@ export default function Body(){
 
        image:"/header-images/institution.jpeg"
     }
+
+    const handleModalOpen = () => {
+        // Handle modal opening logic here
+    };
+
+    const handleLoginOpen = () => {
+        // Handle login opening logic here
+    };
+
+    const handleSignUpOpen = () => {
+        // Handle sign up opening logic here
+    };
     return (
         <main>
              <Modal
 
 isOpen={modalOpen}
-onRequestClose={modalOpen}
+onRequestClose={()=>setModalOpen(false)}
 contentLabel="Example Modal"
 
 className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative shadow-md   px-8 py-16 xl:w-[25%] lg:w-[30%] md:w-[30%] border-0 sm:w-full w-full bg-white"
@@ -42,7 +54,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
 
  
 
-  <CallForm setModalOpen={setModalOpen} heading="Request a Call" fieldsToShow={['name','email','message','phone']}/>
+  <CallForm setModalOpen={setModalOpen} setOpenLogin={handleLoginOpen} setOpenSignUp={handleSignUpOpen} heading="Request a Call" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
 
 <Header bodyData={institutionsData} setModalOpen={setModalOpen}/>
@@ -51,7 +63,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
 
 <Testimonals/>
 
-<FAQ/>
+<FAQ backgroundColor=""/>
         </main>
     )
 }

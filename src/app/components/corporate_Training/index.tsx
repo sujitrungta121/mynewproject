@@ -19,9 +19,9 @@ export default function InnerPage(){
     return (
         <main>
             {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData}/>}
-            <Navbar setMobileNav={setMobileNav} backgroundColor="black"/>
+            <Navbar setMobileNav={setMobileNav} backgroundColor="rgb(0,0,0)"/>
              <Body/>
-            <Footer backgroundColor="black"/>
+            <Footer BackgroundColor="rgb(0 0 0)"/>
         </main>
     )
 }

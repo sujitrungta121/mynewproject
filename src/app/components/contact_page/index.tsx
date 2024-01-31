@@ -16,7 +16,7 @@ export default function Contact(){
     const [mobileNav,setMobileNav]=useState(false)
     return (
         <main className="flex flex-col relative">
-            <Navbar backgroundColor="black" setMobileNav={setMobileNav}/> 
+            <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setMobileNav}/> 
             {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData}/>}
             <div className="2xl:bg-amber-400 2xl:m-12    bg-emerald-900 ">
 
@@ -44,7 +44,7 @@ export default function Contact(){
              {
               basicDetails.map((item)=>{
                 return(
-                  <div className="flex flex-row gap-4 items-center">
+                  <div className="flex flex-row gap-4 items-center" key={item.id}>
                     <item.icon className="2xl:h-6 2xl:w-6 xl:h-6 xl:w-6 lg:h-6 lg:w-6 md:h-6 mdw-6 sm:h-4 sm:w-4  h-4 w-4"/>
                     <div className="flex flex-col gap-1 ">
                       <span className="xl:text-base lg:text-base 2xl:text-base md:text-base sm:text-xs text-xs">{item.title}</span>
@@ -58,14 +58,14 @@ export default function Contact(){
             </div>
             </div>
 
-            <ContactForm heading="Tell us About yourself" description="We will shortly connect with you" boxshadow={false}/>
+            <ContactForm heading="Tell us About yourself"  description="We will shortly connect with you" />
           
           </div>
 
      
-          <FAQ/>
+          <FAQ backgroundColor=""/>
 
-            <Footer backgroundColor="black"/>
+            <Footer BackgroundColor="rgb(0,0,0)"/>
           
         </main>
     )

@@ -23,7 +23,7 @@ const [modalOpen,setModalOpen]=useState(false)
             <Header bodyData={companiesData} setModalOpen={setModalOpen}/>
             <Category/>
               
-            <FAQ/>
+            <FAQ backgroundColor=""/>
         </main>
     )
 }

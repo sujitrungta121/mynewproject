@@ -1,25 +1,40 @@
 'use client'
 
-import { Span } from 'next/dist/trace'
 import React from 'react'
 import { useState } from 'react'
-// import Tailwind from 'tailwindcss'
 
-export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fieldsToShow,heading}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,setOpenLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:any[],heading:String})  {
+
+interface ErrorType {
+  [key: string]: String; 
+}    
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  password: string;
+}
+
+
+const initialFormData: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+  password: "",
+};
+
+
+export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fieldsToShow,heading}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,setOpenLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
   
 
-  const [formData,setFormData]=useState({
-  name:"",
-  email:"",
-  phone:"",
-  message:"", 
-  password:"",
-    })
-
-    const [error,setError]=useState({})
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
 
-    const handleChange=(e)=>{
+    const [error, setError] = useState<ErrorType>({});
+
+
+    const handleChange=(e:any)=>{
       setFormData({
         ...formData,
         [e.target.name]:e.target.value
@@ -31,43 +46,49 @@ export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fiel
   
       else e.target.style.borderColor="black";
     }
-    const handleBlur=(e)=>{
+    const handleBlur=(e:any)=>{
       const nameField=e.target.name;
        if(e.target.value==="" && error[nameField])e.target.style.borderColor="red";
        e.target.style.borderColor="black"
     }
 
    
+            
 
-    
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
       e.preventDefault();
-      const newErrors = {};
+      const newErrors: ErrorType = {};
+           
       for (const field of fieldsToShow) {
-        if (!formData[field] && field !== 'message') {
-          newErrors[field] = `${field} cannot be empty`;
+        if (!formData[field as keyof FormData] && field !== 'message') {
+          newErrors[field as keyof FormData]= `${field} cannot be empty`;
         }
       }
+       
       setError(newErrors);
+    
       if (Object.keys(newErrors).length === 0) {
         setFormData({
-            name:"",
-            email:"",
-            message:"",
-            phone:""
-          })
-        console.log('Form submitted:', formData);
-        setModalOpen(false)
+          name: "",
+          email: "",
+          message: "",
+          phone: "",
+          password:""
+        });
+    
+                  
+            console.log('Form submitted:', formData);
+        setModalOpen(false);
         setOpenLogin(false);
-        setOpenSignUp(false)
+        setOpenSignUp(false);
       }
-     
     };
+    
 
 
   return (
    
-    <div className="flex flex-col w-full max-w-md gap-2 bg-white z-50">
+    <div className="flex flex-col w-full max-w-md gap-2 bg-white z-40">
       <h2 className="text-2xl font-bold text-center mb-8 text-green-600">{heading}</h2>
       <form onSubmit={handleSubmit}>
       {fieldsToShow?.includes('name') &&  <div className="mb-6 w-full">
@@ -121,11 +142,11 @@ export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fiel
             onChange={handleChange}
             required
           />
-           {error.phone && <span className="text-red-600">{error.phone}</span>}
+           {error.password && <span className="text-red-600">{error.password}</span>}
         </div>}
      { fieldsToShow?.includes('message') &&  <div className="mb-6">
           <textarea
-            rows="4"
+            rows={4}
             id="message"
             name="message"
             placeholder="Write about your self"
@@ -144,3 +165,4 @@ export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fiel
       </form>
 </div>
   )}
+

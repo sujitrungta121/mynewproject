@@ -15,12 +15,12 @@ export default function FreshersZone(){
     return (
         <main>
             {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
-        <Navbar backgroundColor="black" setMobileNav={setMobileNav}/>
+        <Navbar backgroundColor="rgb(0,0,0)"setMobileNav={setMobileNav}/>
       
  <Body/>
       
 
-        <Footer backgroundColor="black"/>
+        <Footer BackgroundColor="rgb(0,0,0)" />
         </main>
     )
 }

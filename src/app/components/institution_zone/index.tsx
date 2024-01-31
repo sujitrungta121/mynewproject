@@ -17,11 +17,11 @@ export default function InstitutionPage(){
         <main>
            
             {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
-            <Navbar setMobileNav={setMobileNav} backgroundColor="black"/>
+            <Navbar setMobileNav={setMobileNav} backgroundColor="rgb(0,0,0)"/>
 
           <Body/>
 
-            <Footer backgroundColor="black"/>
+            <Footer BackgroundColor="rgb(0,0,0)"/>
         </main>
     )
 }
