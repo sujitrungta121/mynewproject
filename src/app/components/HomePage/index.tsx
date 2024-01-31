@@ -18,7 +18,7 @@ export default function Main() {
 
   return (
     <main className="flex w-full  flex-col  ">
-               {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
+               {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav} width=""/>}
 
       <Navbar setMobileNav={setMobileNav} backgroundColor=""/>
       <Header/>

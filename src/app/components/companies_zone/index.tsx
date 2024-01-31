@@ -14,7 +14,7 @@ export default function CompaniesZone(){
     const [openMobileNav,setOpenMobileNav]=useState(false)
     return (
         <main>
-            {openMobileNav && <MobileNav data={navData} setMobileNav={setOpenMobileNav}/>}
+            {openMobileNav && <MobileNav data={navData} setMobileNav={setOpenMobileNav} width="100%"/>}
             <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setOpenMobileNav}/>
             <Body/>
             <Footer BackgroundColor="rgb(0,0,0)"/>

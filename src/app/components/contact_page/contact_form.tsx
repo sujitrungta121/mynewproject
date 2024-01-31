@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useState } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 
@@ -57,10 +54,11 @@ export default function ContactForm({ heading, description }: { heading: string;
     if (Object.keys(newErrors).length === 0) {
       console.log("Form submitted:", formData);
       setFormData({
-        name:"",
-        email:"",
-        message:""
-      })
+        name: "",
+        email: "",
+        message: "",
+        
+      });
     }
   };
 
@@ -81,7 +79,7 @@ export default function ContactForm({ heading, description }: { heading: string;
         </div>
 
         <div className="p-4">
-          <form action="/thank-page" method="POST" className="flex flex-col space-y-4" >
+          <form action="/thank-page" method="POST" className="flex flex-col space-y-4" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-4 w-full">
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col">

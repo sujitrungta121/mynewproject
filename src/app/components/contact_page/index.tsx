@@ -14,10 +14,11 @@ import navData from "@/app/common/metadata/navData";
 export default function Contact(){
 
     const [mobileNav,setMobileNav]=useState(false)
+    const address = '1600 Amphitheatre Parkway, Mountain View, CA';
     return (
         <main className="flex flex-col relative">
             <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setMobileNav}/> 
-            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData}/>}
+            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData} width=""/>}
             <div className="2xl:bg-amber-400 2xl:m-12    bg-emerald-900 ">
 
            
@@ -62,6 +63,8 @@ export default function Contact(){
           
           </div>
 
+
+          
      
           <FAQ backgroundColor=""/>
 

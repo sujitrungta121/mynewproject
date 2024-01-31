@@ -14,7 +14,7 @@ export default function FreshersZone(){
     const [mobileNav,setMobileNav]=useState(false)
     return (
         <main>
-            {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
+            {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav} width=""/>}
         <Navbar backgroundColor="rgb(0,0,0)"setMobileNav={setMobileNav}/>
       
  <Body/>

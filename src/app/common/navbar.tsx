@@ -132,7 +132,7 @@ export default function Navbar({
                     </span>
                     {item.sideArrow && (
                       <MdArrowDropDown
-                        color={backgroundColor === "black" ? "white" : " black"}
+                        color={backgroundColor  ? "white" : " black"}
                       />
                     )}
 

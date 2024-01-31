@@ -15,7 +15,7 @@ export default function BlockChain(){
     const [mobileNav,setMobileNav]=useState(false);
     return(
         <main>
-            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData}/>}
+            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData} width=""/>}
             <Navbar backgroundColor="rgb(0,0,0)" setMobileNav={setMobileNav}/>
              <Body/>
             <Footer BackgroundColor="rgb(0,0,0)"/>

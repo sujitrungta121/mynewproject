@@ -57,7 +57,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
          closeLogin={handleLoginClick}
          closeSignUp={handleSignUp}  heading="Want To join" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
-           <Header bodyData={data} setModalOpen={setModalOpen}/>
+           <Header bodyData={data} setModalOpen={setModalOpen} click={false}/>
 
            <PopularCourses/>
            <div className="shadow-md bg-gray-50">

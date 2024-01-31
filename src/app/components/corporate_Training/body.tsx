@@ -80,7 +80,7 @@ useEffect(() => {
          closeLogin={handleLoginClick}
          closeSignUp={handleSignUp}  heading="Request a Call"  fieldsToShow={['name','email','message','phone']}/>
     </Modal>
-    <Header setModalOpen={setModalOpen} bodyData={headerData}/>
+    <Header setModalOpen={setModalOpen} bodyData={headerData} click={false}/>
             
             <PopularCourses/>
             

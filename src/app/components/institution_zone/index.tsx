@@ -16,7 +16,7 @@ export default function InstitutionPage(){
     return (
         <main>
            
-            {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav}/>}
+            {mobileNav && <MobileNav data={navData} setMobileNav={setMobileNav} width=""/>}
             <Navbar setMobileNav={setMobileNav} backgroundColor="rgb(0,0,0)"/>
 
           <Body/>

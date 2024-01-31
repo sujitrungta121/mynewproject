@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Blog(){
     return (
-        <main className="flex flex-col pl-2  xl:pb-12 md:pb-12 lg:pb-12 2xl:pb-12 sm:pb-4 pb-4 sm:pl-2 md:pl-2  xl:pl-32 xl:pr-32 lg:pr-32  lg:pl-32 gap-8">
+        <main className="flex flex-col pl-2 border-b xl:pb-12 md:pb-12 lg:pb-12 2xl:pb-12 sm:pb-4 pb-4 sm:pl-2 md:pl-2  xl:pl-32 xl:pr-32 lg:pr-32  lg:pl-32 gap-8">
             {/* heading */}
         
 

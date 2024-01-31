@@ -18,7 +18,7 @@ export default function InnerPage(){
     const [mobileNav,setMobileNav]=useState(false)
     return (
         <main>
-            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData}/>}
+            {mobileNav && <MobileNav setMobileNav={setMobileNav} data={navData} width=""/>}
             <Navbar setMobileNav={setMobileNav} backgroundColor="rgb(0,0,0)"/>
              <Body/>
             <Footer BackgroundColor="rgb(0 0 0)"/>

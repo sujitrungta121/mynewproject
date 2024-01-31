@@ -97,8 +97,8 @@ export default function Footer({ BackgroundColor }: { BackgroundColor: String })
 
         <div className="flex flex-col sm:gap-2 gap-8">
           <span className="text-white text-base font-semibold">Subscribe</span>
-          <div className={`flex p-4 justify-between ${BackgroundColor==="black" ?  "bg-slate-700":'bg-emerald-800'}`}>
-            <input type="email" placeholder="your email address" className={`focus:outline-none focus:border-none text-xs ${BackgroundColor ?"bg-slate-700 ":" bg-emerald-800"} xl:w-full lg:w-full md:w-full sm:w-[70%] w-[60%]`}/>
+          <div className={`flex p-4 justify-between ${BackgroundColor ?  "bg-slate-700":'bg-emerald-800'}`}>
+            <input type="email" placeholder="your email address" className={`focus:outline-none focus:border-none text-xs ${BackgroundColor ?"bg-slate-700 ":" bg-emerald-800"} text-white xl:w-full lg:w-full md:w-full sm:w-[70%] w-[60%]`}/>
             <span className="text-white">send</span>
           </div>
           <div className="flex flex-col gap-2">
