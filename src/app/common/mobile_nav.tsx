@@ -14,7 +14,7 @@ export default function MobileNav({data,setMobileNav}:{data:any[],setMobileNav:R
     const [openModal, setModalOpen] = useState(false);
     const [openSignup,setOpenSignup]=useState(false)
     const [openLogin,setOpenLogin]=useState(false)
-    console.log(data,setMobileNav,"data setmovds")
+
 
     const router=useRouter();
 
@@ -24,6 +24,17 @@ export default function MobileNav({data,setMobileNav}:{data:any[],setMobileNav:R
         if(openInnerMenu)setOpenInnerMenu(null)
         document.body.style.overflow = ''; 
       };
+
+      const handleModalClose=()=>{
+        setModalOpen(false)
+      }
+    
+      const handleLoginClick=()=>{
+        setOpenLogin(false)
+      }
+      const handleSignUp=()=>{
+        setOpenSignup(false)
+      }
     return (
     
         <main className="bg-white sm:w-[80] md:w-[70%] w-[100%]  h-[200rem] flex flex-col gap-4  absolute right-0 top-0 bottom-0 z-40 overflow-y-auto">
@@ -44,22 +55,26 @@ export default function MobileNav({data,setMobileNav}:{data:any[],setMobileNav:R
           </div>
       
 
-          {openLogin && (   <CallForm
-          setModalOpen={setModalOpen}
-          setOpenLogin={setOpenLogin}
-          setOpenSignUp={setOpenSignup}
-          fieldsToShow={["name","email"]}
-          heading="Login"        
-        /> )} 
+          {openLogin && (
+  <CallForm
+  modalClosing={handleModalClose}
+  closeLogin={handleLoginClick}
+  closeSignUp={handleSignUp}
+    fieldsToShow={["name", "email"]}
+    heading="Login"
+  />
+)}
+
+
        
        
        
         
       
           {openSignup && (   <CallForm
-          setModalOpen={setModalOpen}
-          setOpenLogin={setOpenLogin}
-          setOpenSignUp={setOpenSignup}
+          modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp}
           fieldsToShow={["name","email","password"]}
           heading="Signup"        
         /> )}
@@ -76,7 +91,7 @@ export default function MobileNav({data,setMobileNav}:{data:any[],setMobileNav:R
             <div className="flex flex-col gap-4 border-b p-4">
                 {
                     data.map((item)=>{
-                        console.log(item,"new item")
+                      
                         return (
                             <div  className="flex items-center justify-between" key={item.id} onClick={()=>{setOpenInnerMenu(item.id);setOpenMenu(true); item?.page && router.push(item.page)}}>
                                 <span className="text-black">{item.title}</span>

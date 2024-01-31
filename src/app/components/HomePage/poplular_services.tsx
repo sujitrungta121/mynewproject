@@ -26,7 +26,7 @@ export default function PopularServices(){
                     </div>
                 </div>
 
-                {/* body */}
+               
                 <div>body</div>
             </div>
         </main>

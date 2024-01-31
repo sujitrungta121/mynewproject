@@ -27,7 +27,7 @@ export default function Blog(){
                         return (
                         <div key={item.id} className="flex flex-col gap-6 shadow-sm xl:w-[60%] lg:w-[60%] md:w-[60%] 2xl:w-[60%] sm:w-full w-full ">
                             <div className=" " >
-                                <img src={item.image} alt="no image" className="object-cover relative "/>
+                                <Image src={item.image} alt="no image" className="object-cover relative "  width={300} height={300}/>
                                 </div>
                                 <div className="flex flex-col gap-2 xl:p-4 lg:p-4 2xl:p-4 md:p-4 sm:p-1 p-1">
                                     <span className="2xl:text-base xl:text-base md:text-base lg:text-base sm:text-sm text-xs">{item.date}</span>

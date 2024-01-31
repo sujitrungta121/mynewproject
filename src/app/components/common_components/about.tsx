@@ -21,7 +21,7 @@ export default function About({open,backgroundColor}:{open:boolean,backgroundCol
                 return(
                     <div key={item.id} className="flex flex-row gap-4">
 
-                     <img src={item.image} className="xl:w-10 xl:h-10 lg:w-10 lg:h-10 md:w-4 md:h-4 sm:w-4 sm:h-4 w-4 h-4 "/>
+                     <Image src={item.image} alt="no image"  width={200} height={200} className="xl:w-10 xl:h-10 lg:w-10 lg:h-10 md:w-4 md:h-4 sm:w-4 sm:h-4 w-4 h-4 "/>
                       <div className="flex flex-col gap-2">
                         <span className='  xl:text-base lg:text-base md:text-base sm:text-sm text-xs '>{item.title}</span>
                         <span className="text-gray-600 text-xs xl:text-sm lg:text-sm md:text-sm sm:text-xs ">{item.description}</span>
@@ -37,7 +37,7 @@ export default function About({open,backgroundColor}:{open:boolean,backgroundCol
    
 
         <div className="absolute xl:bottom-[10%] xl:right-[-20%] mb-16 top-[80%]  lg:mb-0 xl:mb-0 lg:right-[-20%] lg:top-[10%]   h-full md:right-[5%] md:top-[2%] xl:w-[60%] lg:w-[60%]  md:w-[50%] sm:top-[38%]   sm:mb-32 ">
-          <img src="/header-images/girl_image.png"  className="md:w-[100%] w-full" />
+          <Image src="/header-images/girl_image.png" alt="no image"  width={200} height={200} className="md:w-[100%] w-full" />
       
         </div>
         </div>   

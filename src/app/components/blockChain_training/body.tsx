@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 
 export default function Body(){
@@ -8,7 +9,7 @@ export default function Body(){
             <span className=" text-center">Come and learn about blockchain training</span>
             </div>
 
-            <img src="/courses-images/block-chain.jpg" className="h-[40rem]"/>
+            <Image alt="no image" src="/courses-images/block-chain.jpg" className="h-[40rem]"  width={2000} height={500}/>
 
             <div className="flex flex-col 2xl:pl-24 xl:pl-24 lg:pl-24 md:pl-24 sm:pl-4 pl-4  2xl:pr-24 xl:pr-24 lg:pr-24 md:pr-24 sm:pr-2 pr-2 2xl:pt-16 xl:pt-16 lg:pt-16 md:pt-16 sm:pt-4 pt-4 2xl:pb-16 xl:pb-16 lg:pb-16 md:pb-16 sm:pb-4 pb-4 gap-4">
                 <span className="text-2xl font-bold" >Introduction</span>

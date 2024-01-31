@@ -24,7 +24,7 @@ export default function Navbar({
 
 
 }) {
-  console.log(setMobileNav, "setmovile");
+
   const [openMenu, setOpenMenu] = useState(false);
   const [openLogin,setOpenLogin]=useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
@@ -36,6 +36,17 @@ export default function Navbar({
     setMobileNav(true);
     document.body.style.overflow = "hidden";
   };
+
+  const handleModalClose=()=>{
+    setModalOpen(false)
+  }
+
+  const handleLoginClick=()=>{
+    setOpenLogin(false)
+  }
+  const handleSignUp=()=>{
+    setOpenSignup(false)
+  }
 
   return (
     <main className="flex flex-row w-full  p-0 md:justify-between sm:justify-between justify-between items-center sm:p-4 md:p-0  sm:border-b border-b lg:border-none ">
@@ -56,9 +67,9 @@ export default function Navbar({
       
 
          {openLogin && (   <CallForm
-          setModalOpen={setModalOpen}
-          setOpenLogin={setOpenLogin}
-          setOpenSignUp={setOpenSignup}
+            modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp}
           fieldsToShow={["name","email"]}
           heading="Login"        
         /> )} 
@@ -68,9 +79,9 @@ export default function Navbar({
         
       
           {openSignup && (   <CallForm
-          setModalOpen={setModalOpen}
-          setOpenLogin={setOpenLogin}
-          setOpenSignUp={setOpenSignup}
+         modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp}
           fieldsToShow={["name","email","password"]}
           heading="Signup"        
         /> )}
@@ -94,7 +105,7 @@ export default function Navbar({
             />
             <div className=" flex-row   gap-4 sm:hidden lg:flex hidden">
               {navData?.map((item) => {
-                console.log(hoveredItem, "inside the map");
+            
                 return (
                   <div
                     key={item.id}

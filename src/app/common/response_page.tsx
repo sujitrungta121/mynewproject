@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MdArrowOutward } from "react-icons/md";
 
@@ -28,7 +29,7 @@ const ResponsePage: React.FC<ResponsePageProps> = ({ data }) => {
     <main className="flex  2xl:flex-row  xl:flex-row lg:flex-row gap-24 md:flex-row sm:flex-col flex-col mb-8 mt-8 xl:justify-center lg:justify-center 2xl:justify-center xl:p-0 lg:p-0 md:p-0 sm:p-0 p-4 items-center">
       
       <div className="h-[20%] w-[50%]">
-      <img src={data?.image} alt="" />
+      <Image src={data?.image} alt="" width={500} height={500} />
       </div>
 
       <div className="flex flex-col gap-4   items-center xl:items-start lg:items-start md:items-start sm:items-center">

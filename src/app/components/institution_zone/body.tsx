@@ -26,18 +26,16 @@ export default function Body(){
 
        image:"/header-images/institution.jpeg"
     }
-
-    const handleModalOpen = () => {
-        // Handle modal opening logic here
-    };
-
-    const handleLoginOpen = () => {
-        // Handle login opening logic here
-    };
-
-    const handleSignUpOpen = () => {
-        // Handle sign up opening logic here
-    };
+    const handleModalClose=()=>{
+        setModalOpen(false)
+      }
+    
+      const handleLoginClick=()=>{
+    
+      }
+      const handleSignUp=()=>{
+       
+      }
     return (
         <main>
              <Modal
@@ -54,7 +52,9 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
 
  
 
-  <CallForm setModalOpen={setModalOpen} setOpenLogin={handleLoginOpen} setOpenSignUp={handleSignUpOpen} heading="Request a Call" fieldsToShow={['name','email','message','phone']}/>
+  <CallForm   modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp} heading="Request a Call" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
 
 <Header bodyData={institutionsData} setModalOpen={setModalOpen}/>

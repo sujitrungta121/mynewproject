@@ -45,7 +45,7 @@ const DropDown: React.FC<DropDownProps> = ({
           } hover:bg-gray-600 flex flex-row justify-between p-2 hover:color-white`}
           onMouseEnter={() => {
             setHoverItem(item.id);
-            console.log(hoverItem, "in the dropdown");
+      
           }}
           onMouseLeave={() => {
             setHoverItem(null);

@@ -126,7 +126,7 @@ export default function Footer({ BackgroundColor }: { BackgroundColor: String })
           </span>
           <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs text-xs">Developed by iekmasolutions</span>
         </div>
-       <div onClick={()=>{console.log(showLanguage);setShowLanguage(true)}}className={`flex relative w-[20%] lg:w-[10%] sm:w-full w-full md:w-[10%] gap-2 items-center justify-center ${BackgroundColor? "bg-slate-500": "bg-emerald-800"} p-4 hover:cursor-pointer`} onMouseEnter={()=>setShowLanguage(true)} onMouseLeave={()=>setShowLanguage(false)}>
+       <div onClick={()=>{;setShowLanguage(true)}}className={`flex relative w-[20%] lg:w-[10%] sm:w-full w-full md:w-[10%] gap-2 items-center justify-center ${BackgroundColor? "bg-slate-500": "bg-emerald-800"} p-4 hover:cursor-pointer`} onMouseEnter={()=>setShowLanguage(true)} onMouseLeave={()=>setShowLanguage(false)}>
         <span>English</span>
         <IoMdArrowDropup/>
         {showLanguage && <DropDown bottomValue={30} rightValue={10} border={true} topValue={0} position="bottom" dropDownItem={language} />}

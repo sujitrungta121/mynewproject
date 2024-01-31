@@ -40,7 +40,7 @@ export default function Testimonals(){
      { reviewData?.map((item)=>{
         return(
             <div key={item.id} className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-row border w-full p-4 items-center rounded-full hover:cursor-pointer" onClick={() => setClickedId(item.id)}>
-            <img src={item.avatar} alt="no image" className="w-15 h-10" />
+            <Image  src={item.avatar} alt="no image" className="w-15 h-10"  width={40} height={70}/>
             <div className="flex flex-row">
             <div className="flex flex-col ml-2">
               <span className="font-medium text-base">{item.name}</span>

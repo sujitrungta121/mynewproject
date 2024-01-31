@@ -9,7 +9,6 @@ export default function FAQ({backgroundColor} : {backgroundColor:String}){
     const [openFaq,setOpenFaq]=useState(false)
     const [openIndex,setOpenIndex]=useState<number | null>(null)
 
-    console.log(openIndex,openFaq, "above")
     return (
         <main className="flex flex-col items-center gap-16 pb-32 sm:p-4 p-4 lg:p-0 xl:p-0 2xl:p-0 md:p-0 mb-16 mt-16">
     
@@ -36,7 +35,7 @@ export default function FAQ({backgroundColor} : {backgroundColor:String}){
         setOpenIndex(null)
       }
     
-      console.log(openIndex, openFaq);
+     
     }}
   >
     <div className="flex flex-row xl:justify-between xl:gap-32 lg:gap-32 md:gap-32 lg:justify-between md:justify-between sm:justify-between justify-between gap-4">

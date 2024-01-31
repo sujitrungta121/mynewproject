@@ -25,8 +25,9 @@ const initialFormData: FormData = {
 };
 
 
-export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fieldsToShow,heading}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,setOpenLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
-  
+// export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fieldsToShow,heading}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,setOpenLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
+  export default function CallForm  ({modalClosing,closeLogin,closeSignUp,fieldsToShow,heading}:{modalClosing:React.Dispatch<React.SetStateAction<boolean>>,closeLogin:React.Dispatch<React.SetStateAction<boolean>>,closeSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
+
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
@@ -78,9 +79,12 @@ export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fiel
     
                   
             console.log('Form submitted:', formData);
-        setModalOpen(false);
-        setOpenLogin(false);
-        setOpenSignUp(false);
+     
+
+        modalClosing(false);
+        closeSignUp(false);
+        closeLogin(false);
+
       }
     };
     
@@ -165,4 +169,5 @@ export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fiel
       </form>
 </div>
   )}
+
 

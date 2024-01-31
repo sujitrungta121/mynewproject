@@ -1,5 +1,6 @@
 'use client'
 
+
 import { useState } from "react"
 import Header from "../common_components/header"
 import PopularCourses from "../corporate_Training/popularCourses"
@@ -25,6 +26,17 @@ export default function Body(){
         button1Content:"join now",
         image:"/assets/College-Fresher.jpg"
     }
+
+    const handleModalClose=()=>{
+        setModalOpen(false)
+      }
+    
+      const handleLoginClick=()=>{
+    
+      }
+      const handleSignUp=()=>{
+     
+      }
     return(
         <main>
              <Modal
@@ -41,7 +53,9 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
 
  
 
-  <CallForm setModalOpen={setModalOpen} setOpenLogin={()=>{ return null}} setOpenSignUp={()=>{return null}}heading="Want To join" fieldsToShow={['name','email','message','phone']}/>
+  <CallForm modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp}  heading="Want To join" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
            <Header bodyData={data} setModalOpen={setModalOpen}/>
 

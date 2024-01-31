@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { MdStar } from "react-icons/md";
+import Image from "next/image";
 
 interface Slide {
   id: number;
@@ -56,7 +57,7 @@ interface DemoSliderProps {
 
               <SwiperSlide key={item?.id}>
                 <div className="border bg-white lg:w-[60%] md:w-[80%]  w-full">
-                  <img src={item.image} alt="no image" className="w-full object-fit"/>
+                  <Image src={item.image} alt="no image" className="w-full object-fit" width={200} height={200} />
                   <div className="flex flex-col gap-2 xl:pl-12 2xl:pl-12 md:pl-12 lg:pl-12 sm:pl-4  pb-7 w-full">
                     <div>
                     <span className="text-gray-600 xl:text-sm lg:text-sm md:text-sm sm:text-xs text-xs">{item.services}</span>

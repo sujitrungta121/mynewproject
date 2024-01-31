@@ -49,17 +49,16 @@ useEffect(() => {
     };
   }, [modalOpen]);
 
-  const handleModalOpen = () => {
-    // Handle modal opening logic here
-};
+  const handleModalClose=()=>{
+    setModalOpen(false)
+  }
 
-const handleLoginOpen = () => {
-    // Handle login opening logic here
-};
-
-const handleSignUpOpen = () => {
-    // Handle sign up opening logic here
-};
+  const handleLoginClick=()=>{
+  
+  }
+  const handleSignUp=()=>{
+   
+  }
     return (
         <main >
          
@@ -77,7 +76,9 @@ const handleSignUpOpen = () => {
       
        
     
-       <CallForm setModalOpen={setModalOpen} heading="Request a Call" setOpenLogin={handleLoginOpen} setOpenSignUp={handleSignUpOpen} fieldsToShow={['name','email','message','phone']}/>
+       <CallForm  modalClosing={handleModalClose}
+         closeLogin={handleLoginClick}
+         closeSignUp={handleSignUp}  heading="Request a Call"  fieldsToShow={['name','email','message','phone']}/>
     </Modal>
     <Header setModalOpen={setModalOpen} bodyData={headerData}/>
             

@@ -13,7 +13,7 @@ export default function MainPage(){
     const data={
         id:1,
         code:"201",
-        image:'/error_img.png',
+        image:'/header-images/error_img.png',
         message:"Thanks for Visiting our page",
         description:"One of our team member will shortly connect with you"
     }

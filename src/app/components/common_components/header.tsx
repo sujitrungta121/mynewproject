@@ -1,3 +1,4 @@
+import Image from "next/image";
 import aminities from "../../common/metadata/aminities"
 
 export default function Header({setModalOpen,bodyData}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,bodyData:any}) {
@@ -30,7 +31,7 @@ export default function Header({setModalOpen,bodyData}:{setModalOpen:React.Dispa
 
      </div>
 </div>
-<img src="/header-images/companies.jpg" className=" w-[100%] h-[100%] object-cover absolute top-0 right-0"/>
+<Image src="/header-images/companies.jpg" alt="no image" className=" w-[100%] h-[100%] object-cover absolute top-0 right-0"  width={100} height={100}/>
 
 </main>      
   );
