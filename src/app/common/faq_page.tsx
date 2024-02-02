@@ -30,7 +30,12 @@ export default function FAQ({backgroundColor} : {backgroundColor:String}){
         setOpenFaq(true);
         setOpenIndex(item.id);
       }
-      else if(openIndex){
+      else if(openIndex  && openIndex!==item.id){
+        setOpenFaq(true);
+        setOpenIndex(item.id)
+      }
+
+      else if(openIndex  && openIndex===item.id){
         setOpenFaq(false);
         setOpenIndex(null)
       }

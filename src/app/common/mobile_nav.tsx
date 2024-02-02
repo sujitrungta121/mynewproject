@@ -79,10 +79,7 @@ export default function MobileNav({
           />
         )}
       </Modal>
-      <div className="flex flex-row justify-between border-b p-4">
-        <span>Menu</span>
-        <IoMdClose onClick={handleClose} color="black" />
-      </div>
+  
 
       <div className="flex flex-col gap-4 border-b p-4">
         {data.map((item) => {

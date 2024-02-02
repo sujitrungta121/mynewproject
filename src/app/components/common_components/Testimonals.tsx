@@ -39,12 +39,12 @@ export default function Testimonals(){
 
      { reviewData?.map((item)=>{
         return(
-            <div key={item.id} className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-row border w-full p-4 items-center rounded-full hover:cursor-pointer" onClick={() => setClickedId(item.id)}>
+            <div key={item.id} className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col border w-full p-4 items-center rounded-full hover:cursor-pointer" onClick={() => setClickedId(item.id)}>
             <Image  src={item.avatar} alt="no image" className="w-15 h-10"  width={40} height={70}/>
             <div className="flex flex-row">
             <div className="flex flex-col ml-2">
-              <span className="font-medium text-base">{item.name}</span>
-              <span className="text-xs">{item.designation}</span>
+              <span className="font-medium xl:text-base lg:text-base 2xl:text-base md:text-base sm:text-base text-xs">{item.name}</span>
+              <span className="xl:text-xs 2xl:text-xs lg:text-xs md:text-xs sm:text-xs text-[5px]">{item.designation}</span>
             </div>
             </div>
           </div>

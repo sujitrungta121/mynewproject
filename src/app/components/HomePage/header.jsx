@@ -9,8 +9,8 @@ export default function Header(){
     return(
         <main className="flex flex-row relative">
 
- <div className="flex w-full sm:w-full md:w-full lg:w-[70%] xl:w-[60%]  bg-amber-50 lg:bg-white xl:bg-white sm:bg-amber-50 p-4 md:pl-0 ">
-             <div className="flex flex-col gap-4 md:pl-4 sm:w-full  pl-0  md:items-center  justify-center  xl:pt-32 lg:pt-32 sm:pt-2 pt-2 lg:pl-20">
+ <div className="flex w-full sm:w-full md:w-full lg:w-[70%] xl:w-[60%]  bg-amber-50 lg:bg-white xl:bg-white sm:bg-amber-50 p-4 md:pl-0 xl:items-center 2xl:items-center lg:items-center md:items-center">
+             <div className="flex flex-col gap-4 md:pl-4 sm:w-full  pl-0  items-start  justify-center xl:items-start lg:items-start md:items-start sm:items-start xl:pt-32 lg:pt-32 sm:pt-2 pt-2 lg:pl-20">
       <div className="flex flex-col gap-2">
       <span className="text-emerald-900 font-bold xl:text-4xl lg:text-4xl text-base  md:text-4xl    lg:items-center ">With talented <strong className="text-green-500 xl:text-4xl lg:text-4xl md:text-4xl  text-base">Freelancers</strong> Do more work</span>
       <span className="text-xs sm:text-xs lg:text-base xl:text-base md:text-base ">Millions of people use freeio.com to turn their ideas into reality.</span>
@@ -28,23 +28,22 @@ export default function Header(){
           <button className="text-white">Search</button>
         </div>
       </div>
-      <div className="sm:flex flex-row flex-wrap md:flex md:flex-row lg:flex lg:flex-row xl:flex xl:flex-row gap-2">
-        <span className="text-sm ">Popular Searches:</span>
-      <div className="flex flex-row flex-wrap w-full xl:gap-2 lg:gap-2 md:gap-2 gap-1">
-      {
-           popularSearches?.map((item,index)=>{
-            return(
-               <div key={index} className="hover:cursor-pointer ">
-                <span className="hover:text-green-900 md:text-sm xl:text-sm lg:text-sm sm:text-xs text-xs">{item}{!(length===index+1) && <span>,</span> }</span>
-                
-               </div>
-            )
-           })
-      }
-      
-      
-      </div>
-      </div>
+      <div className="sm:flex flex flex-row flex-wrap md:flex md:flex-row lg:flex-row xl:flex-row gap-2">
+  <span className="text-sm">Popular Searches:</span>
+  <div className="flex flex-row flex-wrap w-full gap-1">
+    {popularSearches?.map((item, index) => {
+      return (
+        <div key={index} className="hover:cursor-pointer">
+          <span className="hover:text-green-900 hover:font-semibold md:text-sm xl:text-sm lg:text-sm sm:text-xs text-xs">
+            {item}
+            {!(length === index + 1) && <span>,</span>}
+          </span>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
      </div>
      </div>
 

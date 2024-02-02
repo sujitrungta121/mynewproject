@@ -60,11 +60,13 @@ const navData=[
                     {
                         id:1,
                         title:"Python with MongoDB",
+                        page:"/"
                        
                     },
                     {
                         id:2,
-                        title:"MEAN stack Training"
+                        title:"MEAN stack Training",
+                        page:"/"
                     },
                 ],
             },
@@ -75,15 +77,18 @@ const navData=[
                 content:[
                     {
                         id:1,
-                        title:"Programming Languages"
+                        title:"Programming Languages",
+                        page:"/"
                     },
                     {
                         id:2,
-                        title:"Big Data Management"
+                        title:"Big Data Management",
+                        page:"/"
                     },
                     {
                         id:3,
-                        title:"Search Engine Optimization"
+                        title:"Search Engine Optimization",
+                        page:"/"
                     },
                 ],
             },
@@ -95,15 +100,18 @@ const navData=[
                 content:[
                     {
                         id:1,
-                        title:"M.tech & B.tech Major and Minor Projects"
+                        title:"M.tech & B.tech Major and Minor Projects",
+                        page:"/"
                     },
                     {
                         id:2,
-                        title:"MCA & MSCIT projects"
+                        title:"MCA & MSCIT projects",
+                        page:"/"
                     },
                     {
                         id:3,
-                        title:"BCA & BSCIT projects"
+                        title:"BCA & BSCIT projects",
+                        page:"/"
                     },
                 ],
             },

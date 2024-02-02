@@ -31,7 +31,7 @@ export default function Blog(){
                                 </div>
                                 <div className="flex flex-col gap-2 xl:p-4 lg:p-4 2xl:p-4 md:p-4 sm:p-1 p-1">
                                     <span className="2xl:text-base xl:text-base md:text-base lg:text-base sm:text-sm text-xs">{item.date}</span>
-                                    <span className="xl:text-lg md:text-lg 2xl:text-lg lg:text-lg sm:text-xs text-xs  text-black font-medium">{item.blogHeading}</span>
+                                    <span className="xl:text-lg md:text-lg 2xl:text-lg lg:text-lg sm:text-xs text-[7px]  text-black font-medium">{item.blogHeading}</span>
                                     <span className="xl:text-sm 2xl:text-sm md:text-sm lg:text-sm sm:text-xs text-xs">{item.description}</span>
                                 </div>
                         </div>

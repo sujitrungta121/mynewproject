@@ -40,7 +40,7 @@ export default function Body(){
         <main>
              <Modal
 
-isOpen={modalOpen}
+isOpen={modalOpen && !(institutionsData?.button1Content.toLowerCase().slice(0,7)==="contact")}
 onRequestClose={()=>setModalOpen(false)}
 contentLabel="Example Modal"
 
@@ -57,7 +57,7 @@ className="top-[50%] left-1/2 translate-x-[-50%] -translate-y-1/2   relative sha
          closeSignUp={handleSignUp} heading="Request a Call" fieldsToShow={['name','email','message','phone']}/>
 </Modal>
 
-<Header bodyData={institutionsData} setModalOpen={setModalOpen} click={false}/>
+<Header bodyData={institutionsData} setModalOpen={setModalOpen} click={true}/>
 
 <PopularCourses/>
 

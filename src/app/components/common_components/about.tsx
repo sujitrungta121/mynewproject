@@ -8,11 +8,11 @@ import companyData from "../../common/metadata/company_data";
 export default function About({open,backgroundColor}:{open:boolean,backgroundColor:String}){
     return (
       <main className="border-b pb-20 ">
-        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col lg:w-[80%] xl:w-[80%] relative h-[50rem] xl:items-center  w-full md:w-full sm:w-full md:pl-0 sm:pl-0 bg-red-100 xl:pt-32 pt-8 pl-8 lg:pt-32 2xl:pt-32  xl:pl-44 pb-32" style={{backgroundColor: backgroundColor && `${backgroundColor}` }}> 
+        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col lg:w-[80%] xl:w-[80%] relative h-[50rem] xl:items-center  w-full md:w-full sm:w-full md:pl-0 sm:pl-0 bg-red-100 xl:pt-32 pt-2 pl-8 lg:pt-32 2xl:pt-32  xl:pl-44 pb-32" style={{backgroundColor: backgroundColor && `${backgroundColor}` }}> 
 
        <div className="flex flex-row sm:gap-16 xl:items-center lg:items-center  ">
         
-        <div className="w-[80%] md:w-[60%] flex flex-col xl:gap-16 lg:gap-16 md:gap-4 sm:gap-8 gap-8 md:p-4 lg:p-16 xl:p-16 sm:pl-4 pl-2">
+        <div className="w-[80%] md:w-[60%] flex flex-col xl:gap-16 lg:gap-16 md:gap-4 sm:gap-8 gap-8 md:p-4 lg:p-16 xl:p-16 sm:pl-4 pl-0.5">
           <span className="font-bold xl:text-3xl lg:text-3xl text-base md:text-2xl sm:text-xl  ">A whole world of freelance talenet at your fingertips</span>
           <div className="flex flex-col gap-4 ">
 
@@ -23,8 +23,8 @@ export default function About({open,backgroundColor}:{open:boolean,backgroundCol
 
                      <Image src={item.image} alt="no image"  width={200} height={200} className="xl:w-10 xl:h-10 lg:w-10 lg:h-10 md:w-4 md:h-4 sm:w-4 sm:h-4 w-4 h-4 "/>
                       <div className="flex flex-col gap-2">
-                        <span className='  xl:text-base lg:text-base md:text-base sm:text-sm text-xs '>{item.title}</span>
-                        <span className="text-gray-600 text-xs xl:text-sm lg:text-sm md:text-sm sm:text-xs ">{item.description}</span>
+                        <span className='  xl:text-base lg:text-base md:text-base sm:text-sm text-[8px] '>{item.title}</span>
+                        <span className="text-gray-600 text-xs xl:text-sm lg:text-sm md:text-sm sm:text-xs text-[6px] ">{item.description}</span>
                       </div>
                     </div>
                 )

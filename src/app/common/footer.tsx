@@ -52,22 +52,22 @@ export default function Footer({ BackgroundColor }: { BackgroundColor: String })
     >
       <div className="flex lg:flex-row flex-col gap-4 sm:gap-4 md:gap-4 lg:items-center justify-between border-b pb-3">
         <div className="flex gap-4">
-          <span className="text-white text-base  ">
+          <span className="text-white text-base hover:cursor-pointer ">
             Terms of service 
           </span>
-          <span className="text-white text-base  ">
+          <span className="text-white text-base hover:cursor-pointer ">
             Privacy Policy
           </span>
-          <span className="text-white text-base">
+          <span className="text-white text-base hover:cursor-pointer">
             site Map
           </span>
         </div>
         <div className="flex flex-row gap-8 ">
           <span className="text-white">Follow Us</span>
-          <FaFacebookF color="white" />
-          <FaTwitter color="white" />
-          <FaInstagramSquare color="white" />
-          <FaLinkedin color="white" />
+          <FaFacebookF color="white" className="hover:cursor-pointer"/>
+          <FaTwitter color="white" className="hover:cursor-pointer"/>
+          <FaInstagramSquare color="white" className="hover:cursor-pointer"/>
+          <FaLinkedin color="white" className="hover:cursor-pointer"/>
         </div>
       </div>
 
@@ -99,17 +99,17 @@ export default function Footer({ BackgroundColor }: { BackgroundColor: String })
           <span className="text-white text-base font-semibold">Subscribe</span>
           <div className={`flex p-4 justify-between ${BackgroundColor ?  "bg-slate-700":'bg-emerald-800'}`}>
             <input type="email" placeholder="your email address" className={`focus:outline-none focus:border-none text-xs ${BackgroundColor ?"bg-slate-700 ":" bg-emerald-800"} text-white xl:w-full lg:w-full md:w-full sm:w-[70%] w-[60%]`}/>
-            <span className="text-white">send</span>
+            <span className="text-white hover:cursor-pointer">send</span>
           </div>
           <div className="flex flex-col gap-2">
             <span className="text-white">Apps</span>
             <div>
-              <div className="flex flex-row gap-2 items-center ">
-              <SiApple className="text-gray-400" />
+              <div className="flex flex-row gap-2 items-center hover:cursor-pointer ">
+              <SiApple className="text-gray-400 " />
 
                 <span className="text-gray-400">iOS App</span>
               </div>
-              <div className="flex flex-row gap-2 items-center ">
+              <div className="flex flex-row gap-2 items-center hover:cursor-pointer">
               <FaAndroid className="text-gray-400" />
 
                 <span className="text-gray-400">Android App</span>
@@ -121,10 +121,10 @@ export default function Footer({ BackgroundColor }: { BackgroundColor: String })
 
       <div className="flex lg:flex-row flex-col lg:items-center gap-4 justify-between">
         <div className="flex flex-col">
-          <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs text-xs">
+          <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs  text-[4px]">
             &copy; FreshersKolkata.com All right reserved.
           </span>
-          <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs text-xs">Developed by iekmasolutions</span>
+          <span className="text-gray-400 lg:text-base 2xl:text-base xl:text-base md:text-base sm:text-xs text-[4px]">Developed by iekmasolutions</span>
         </div>
        <div onClick={()=>{;setShowLanguage(true)}}className={`flex relative w-[20%] lg:w-[10%] sm:w-full w-full md:w-[10%] gap-2 items-center justify-center ${BackgroundColor? "bg-slate-500": "bg-emerald-800"} p-4 hover:cursor-pointer`} onMouseEnter={()=>setShowLanguage(true)} onMouseLeave={()=>setShowLanguage(false)}>
         <span>English</span>

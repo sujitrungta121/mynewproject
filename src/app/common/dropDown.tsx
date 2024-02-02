@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { MdArrowRight } from "react-icons/md";
 
@@ -22,6 +23,8 @@ const DropDown: React.FC<DropDownProps> = ({
 }) => {
   const [hoverItem, setHoverItem] = useState<number | null>(null);
 
+  const router=useRouter()
+
   const getPositionStyle = () => {
     if (position === "top") {
       return { top: `${topValue}px`, right: `${rightValue}%` };
@@ -42,13 +45,18 @@ const DropDown: React.FC<DropDownProps> = ({
           key={item.id}
           className={`${
             border ? "border-b" : "border-none"
-          } hover:bg-gray-600 flex flex-row justify-between p-2 hover:color-white`}
+          } hover:bg-gray-600 hover:border-s-2 hover:border-s-lime-800 flex flex-row justify-between p-2 hover:color-white`}
           onMouseEnter={() => {
             setHoverItem(item.id);
       
           }}
           onMouseLeave={() => {
             setHoverItem(null);
+          }}
+
+          onClick={() => {
+            
+            item.page && router.push(item.page);
           }}
         >
           <span className="text-sm">{item.title}</span>
