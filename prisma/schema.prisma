@@ -11,4 +11,12 @@ model contact {
   id    Int     @id @default(autoincrement())
   name  String? @db.VarChar(255)
   email String? @db.VarChar(255)
+  message String?  @db.VarChar(10000)
+}
+
+model user {
+  id    Int     @id @default(autoincrement())
+  email  String? @db.VarChar(255)
+  password String? @db.VarChar(255)
+  name String? @db.VarChar(255)
 }

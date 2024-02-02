@@ -34,23 +34,6 @@ const ContactForm = ({ heading, description }: { heading: string; description: s
     });
   };
 
-  const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const nameField = e.target.name;
-    if (e.target.value === "" && error[nameField]) {
-      e.target.style.borderColor = "red";
-    } else {
-      e.target.style.borderColor = "black";
-    }
-  };
-
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const nameField = e.target.name;
-    if (e.target.value === "" && error[nameField]) {
-      e.target.style.borderColor = "red";
-    } else {
-      e.target.style.borderColor = "black";
-    }
-  };
 
   
 

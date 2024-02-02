@@ -22,24 +22,41 @@
 // };
 
 // export default submitContact;
-
+'use server'
 
 import { NextApiResponse,NextApiRequest } from "next";
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 
 
-export default async function submitContact(
-req:NextApiRequest,
-res:NextApiResponse
-){
-  const prisma=new PrismaClient();
-  if(req.method==="GET"){
-    const contact=await prisma.contact.findMany
-    return res.send(contact)
-  }
-  else if(req.method==="POST"){
-    res.status(201).send('POST')
-  }
+// export default async function submitContact(
+// req:NextApiRequest,
+// res:NextApiResponse
+// ){
+//   const prisma=new PrismaClient();
+//   if(req.method==="GET"){
+//     const contact=await prisma.contact.findMany
+//     return res.send(contact)
+//   }
+//   else if(req.method==="POST"){
+//     res.status(201).send('POST')
+//   }
+// }
+import { Prisma, PrismaClient } from "@prisma/client";
+
+
+export default async function submitContact(formData:any){
+
+  const prisma =new PrismaClient();
+  const contact=await prisma.contact.create({
+    data:{
+      name:formData?.name,
+      email:formData?.email,
+      message:formData?.message
+    },
+  })
+
+ 
+  return {status:"200",contact}
 }
 
 
