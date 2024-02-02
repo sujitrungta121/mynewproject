@@ -4,6 +4,7 @@ import submitContact from '@/app/contact-page/submitForm';
 import Modal from "react-modal"
 import { IoClose } from 'react-icons/io5';
 import { IoIosClose } from 'react-icons/io';
+import Login from "../loginForm"
 
 interface ErrorType {
   [key: string]: string; 

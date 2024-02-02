@@ -1,7 +1,8 @@
-'use client'
+// 'use client'
 
 import React from 'react'
 import { useState } from 'react'
+import Login from '../components/loginForm';
 
 
 interface ErrorType {
@@ -25,8 +26,8 @@ const initialFormData: FormData = {
 };
 
 
-// export default function CallForm  ({setModalOpen,setOpenLogin,setOpenSignUp,fieldsToShow,heading}:{setModalOpen:React.Dispatch<React.SetStateAction<boolean>>,setOpenLogin:React.Dispatch<React.SetStateAction<boolean>>,setOpenSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
-  export default function CallForm  ({modalClosing,closeLogin,closeSignUp,fieldsToShow,heading}:{modalClosing:React.Dispatch<React.SetStateAction<boolean>>,closeLogin:React.Dispatch<React.SetStateAction<boolean>>,closeSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
+
+  export default function CallForm  ({modalClosing,closeLogin,closeSignUp,fieldsToShow,heading,action}:{modalClosing:React.Dispatch<React.SetStateAction<boolean>>,action:String,closeLogin:React.Dispatch<React.SetStateAction<boolean>>,closeSignUp:React.Dispatch<React.SetStateAction<boolean>>,fieldsToShow:String[],heading:String})  {
 
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -56,7 +57,7 @@ const initialFormData: FormData = {
    
             
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
       e.preventDefault();
       const newErrors: ErrorType = {};
            
@@ -68,24 +69,65 @@ const initialFormData: FormData = {
        
       setError(newErrors);
     
-      if (Object.keys(newErrors).length === 0) {
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          phone: "",
-          password:""
-        });
+      // if (Object.keys(newErrors).length === 0) {
+      //   console.log(formData)
+
+      //   // if(action==="login" || action==="signup"){
+      //     try {
+      //       const response = await Login(formData);
+      //           console.log(response);
+      //           if (response.status === "200") {
+      //             console.log("form submitted")
+              
+      //         //     setform(initialform);
+             
+      //         //  setOpenModal(true)
+                 
+      //     }
+      //   } 
+      //   catch (error) {
+      //     console.error('Error submitting form:', error);
+          
+      //   }
+      //   // }
+
+      //   setFormData({
+      //     name: "",
+      //     email: "",
+      //     message: "",
+      //     phone: "",
+      //     password:""
+      //   });
     
                   
-            console.log('Form submitted:', formData);
+      //       console.log('Form submitted:', formData);
      
 
-        modalClosing(false);
-        closeSignUp(false);
-        closeLogin(false);
+      //   modalClosing(false);
+      //   closeSignUp(false);
+      //   closeLogin(false);
 
-      }
+      // }
+
+      if (Object.keys(newErrors).length === 0) {
+      
+        try {
+          const response = await Login(formData);
+              console.log(response);
+              if (response.status === "200") {
+                console.log("form submitted")
+            
+            //     setform(initialform);
+           
+            //  setOpenModal(true)
+               
+        }
+      } 
+      catch (error) {
+        console.error('Error submitting form:', error);
+        
+      } 
+      } 
     };
     
 
@@ -163,7 +205,7 @@ const initialFormData: FormData = {
           />
         </div>}
        
-        <div className="mt-8 flex justify-center w-full" onClick={handleSubmit}>
+        <div className="mt-8 flex justify-center w-full" onClick={(e)=>handleSubmit(e)}>
           <button type="submit" className="p-4 rounded-full bg-green-600 text-white font-semibold focus:outline-none focus:ring-2 w-full focus:ring-green-600">submit</button>
         </div>
       </form>

@@ -66,6 +66,7 @@ export default function MobileNav({
             closeSignUp={handleSignUp}
             fieldsToShow={["name", "email"]}
             heading="Login"
+            action="Login"
           />
         )}
 
@@ -76,6 +77,7 @@ export default function MobileNav({
             closeSignUp={handleSignUp}
             fieldsToShow={["name", "email", "password"]}
             heading="Signup"
+            action="signup"
           />
         )}
       </Modal>
