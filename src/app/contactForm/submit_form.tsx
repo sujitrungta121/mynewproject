@@ -33,11 +33,11 @@ export default async function submitForm(formData: any,error:any,setError:React.
         email:formData?.email,
         studentName:formData?.studentName,
         about:formData?.about,
-      //   subjects: {
-      //     // Assuming formData.subjects is an array of subject names
-      //     create: formData.subjects.map((subjectName: string) => ({
-      //       name: subjectName,
-      //     }))
+        subjects: {
+          // Assuming formData.subjects is an array of subject names
+          create: formData.subjects.map((subjectName: string) => ({
+            name: subjectName,
+          }))
       //   },
       //     interest: {
       //       // Assuming formData.subjects is an array of subject names
@@ -47,7 +47,7 @@ export default async function submitForm(formData: any,error:any,setError:React.
       // }
     }
  
-  })
+  }})
    
 
   

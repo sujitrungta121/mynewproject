@@ -39,6 +39,10 @@ export default function Main(){
 
     })
 
+    const handleChange=(fieldName:string,value:string)=>{
+        setFormData({...formData,[fieldName]:value})
+    }
+  console.log(formData?.interests)
     console.log(formData?.interests,"formData")
     return (
         <main className="flex flex-col  bg-slate-200 h-[100rem] p-0">
@@ -55,7 +59,7 @@ export default function Main(){
 
 {currentStep===0 && <FirstPage chipItems={chipItems} setChipItems={setChipItems} setCurrentStep={setCurrentStep} error={error} setError={setError} formData={formData} setFormData={setFormData}/>}
 {currentStep===1 && <SecondStep setCurrentStep={setCurrentStep} error={error} setError={setError} formData={formData} setFormData={setFormData}/>}
-{currentStep===2 && <ThirdForm setCurrentStep={setCurrentStep} error={error}  formData={formData} setFormData={setFormData}/>}
+{currentStep===2 && <ThirdForm setCurrentStep={setCurrentStep}setError={setError} error={error}  formData={formData} setFormData={setFormData}/>}
 {currentStep===3 && <FourthForm setCurrentStep={setCurrentStep}   error={error} setError={setError} formData={formData} setFormData={setFormData}/>}
   </div>
 

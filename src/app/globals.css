@@ -253,7 +253,34 @@ border:none;
   color:red;
   font-weight: 600;
   font-size:15px;
-  
+
+}
+
+.ant-upload-list{
+  display: flex;
+}
+div.ant-upload{
+  width: 50% !important;
+  border: 2px solid #d9d9d9 !important;
+  background-color: #fff !important;
+  height: 126px !important;
+  box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.05);
+}
+div.ant-upload button{
+  color: #7c7c7c;
+  font-size: 16px;
+}
+
+.ant-upload-list-item-container{
+  width: 50% !important;
+  padding-left: 15px;
+  order: 2;
+  height: 126px !important;
+  box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.05);
+ 
+}
+.ant-upload-list-item{
+  border: 2px dashed #d9d9d9 !important;
 }
 
 

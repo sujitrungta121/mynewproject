@@ -1,99 +1,5 @@
-// import { Button } from 'antd';
-// import React, { useState } from 'react';
-// import { PiPlus } from 'react-icons/pi';
-
-// export default function ThirdForm({setCurrentStep}:{setCurrentStep:React.Dispatch<React.SetStateAction<number>>}) {
-//   const [companyName, setCompanyName] = useState('');
-//   const [logo, setLogo] = useState(null);
-//   const [provideServicesRemotely, setProvideServicesRemotely] = useState(false);
-//   const [companyDescription, setCompanyDescription] = useState('');
-
-//   const handleLogoChange = (event) => {
-//     setLogo(event.target.files[0]);
-//   };
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-
-//     // Form validation and submission logic here
-
-//     console.log('Form submitted:', {
-//       companyName,
-//       logo,
-//       provideServicesRemotely,
-//       companyDescription,
-//     });
-//   };
-
-//   return (
-//     <main className="flex flex-col w-full items-center justify-center gap-6">
-//       <span className="text-xl font-bold">Describe YourSelf</span>
-//     <div className="bg-white flex flex-col p-16 w-[60%] gap-4">
-//     <form className="container mx-auto " onSubmit={handleSubmit}>
-//       <div className="mb-4">
-//         <label htmlFor="companyName" className="block text-gray-700 text-sm font-bold mb-2">
-//           Student Name
-//         </label>
-//         <input
-//           type="text"
-//           id="companyName"
-//           name="companyName"
-//           value={companyName}
-//           onChange={(e) => setCompanyName(e.target.value)}
-//           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-//           required
-//         />
-//       </div>
-//       <div className="mb-4">
-//         <label htmlFor="logo" className="block text-gray-700 text-sm font-bold mb-2">
-//           Your Image
-//         </label>
-      
-//         <div className="flex flex-row gap-2 w-full border rounded-md">
-//             <div className="border flex flex-col p-8 h-[10rem] justify-center items-center w-[100%]">
-//                 <PiPlus/>
-//                 <span>Click to upload your image</span>
-//             </div>
-//             <div className="border flex items-center justify-center w-[100%] rounded-md">
-             
-//                 <span>Preview</span>
-//             </div>
-//         </div>
-//       </div>
-//       <div className="mb-4">
-       
-//       </div>
-//       <div className="mb-4">
-//         <label htmlFor="companyDescription" className="block text-gray-700 text-sm font-bold mb-2">
-//          About Yourself
-//         </label>
-//         <textarea
-//           id="companyDescription"
-//           name="companyDescription"
-//           value={companyDescription}
-//           onChange={(e) => setCompanyDescription(e.target.value)}
-//           rows={8}
-//           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-//           required
-//         />
-//       </div>
-     
-//       </form>
-      
-//       <div className="flex justify-between ">
-//                 <Button  className="bg-white text-black " size="large" onClick={()=>setCurrentStep(prev=>prev-1)}>
-//             Back
-//           </Button>
-//           <Button  className="bg-black text-white"  size="large" onClick={()=>setCurrentStep(prev=>prev+1)}>
-//             Next
-//           </Button>
-//                 </div>
-//       </div>
-//       </main>
-//   )}
 
 'use client'
-
 
 import { Button, Image, Input } from 'antd';
 import React, { useState } from 'react';
@@ -125,7 +31,7 @@ const beforeUpload = (file: FileType) => {
   return isJpgOrPng && isLt2M;
 };
 
-export default function ThirdForm({setCurrentStep,formData,setFormData,error}:{setCurrentStep:React.Dispatch<React.SetStateAction<number>>,error:any,formData:any,setFormData:React.Dispatch<React.SetStateAction<any>>}) {
+export default function ThirdForm({setCurrentStep,formData,setFormData,error,SetError}:{setCurrentStep:React.Dispatch<React.SetStateAction<number>>,error:any,setError:React.Dispatch<React.SetStateAction<any>>,formData:any,setFormData:React.Dispatch<React.SetStateAction<any>>}) {
   // const [companyName, setCompanyName] = useState('');
   // const [logo, setLogo] = useState(null);
   // const [provideServicesRemotely, setProvideServicesRemotely] = useState(false);
@@ -156,6 +62,22 @@ export default function ThirdForm({setCurrentStep,formData,setFormData,error}:{s
     </button>
   );
 
+  // const handleLogoChange = (event) => {
+  //   setLogo(event.target.files[0]);
+  // };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   // Form validation and submission logic here
+
+  //   console.log('Form submitted:', {
+  //     companyName,
+  //     logo,
+  //     provideServicesRemotely,
+  //     companyDescription,
+  //   });
+  // };    <form className="container mx-auto "
 
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -198,7 +120,7 @@ export default function ThirdForm({setCurrentStep,formData,setFormData,error}:{s
         onChange={handleChange}
         // style={{width:'100%'}}
       >
-        {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+        uploadButton
       </Upload>
       </div>
             <div className="border flex items-center justify-center w-[100%] rounded-md">
@@ -228,7 +150,7 @@ export default function ThirdForm({setCurrentStep,formData,setFormData,error}:{s
       placeholder="Write about your self"
       style={{ height: 120, resize: 'none' }}
     />
-      {error?.about && <span>{error?.about}</span>}
+      {error?.about && <span>{error?.About}</span>}
       </div>
      
       </form>

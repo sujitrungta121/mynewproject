@@ -1,4 +1,4 @@
-
+'use client'
 
 import React, { useCallback, useEffect } from 'react';
 import { Select, Space } from 'antd';
@@ -42,7 +42,7 @@ const Selection = ({setCurrentStep,error,setError,formData,setFormData}:{setCurr
       // allowClear
       style={{ width: '100%' }}
       placeholder="Please select"
-    // value={formData?.}
+    // value={formData?.interests}
       onChange={handleChange}
       options={options}
       

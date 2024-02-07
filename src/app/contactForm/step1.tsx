@@ -8,9 +8,9 @@ import { useState } from "react";
 
 
 
-// export default function FirstPage({setCurrentStep,error,setError,formData,setFormData}:{setCurrentStep: React.Dispatch<React.SetStateAction<number>>,error:any,setError:React.Dispatch<React.SetStateAction<any>>,formData:any,setFormData:React.Dispatch<React.SetStateAction<any>>,}){
-    
 export default function FirstPage({setCurrentStep,error,setError,formData,setFormData}:{setCurrentStep: React.Dispatch<React.SetStateAction<number>>,error:any,setError:React.Dispatch<React.SetStateAction<any>>,formData:any,setFormData:React.Dispatch<React.SetStateAction<any>>,}){
+    
+// export default function FirstPage({setCurrentStep,error,setError,formData,setFormData}:{setCurrentStep: React.Dispatch<React.SetStateAction<number>>,error:any,setError:React.Dispatch<React.SetStateAction<any>>,formData:any,setFormData: (field: string, value: string) => void}){
 
     
     return (
@@ -18,6 +18,8 @@ export default function FirstPage({setCurrentStep,error,setError,formData,setFor
                 <div className="text-xl font-bold">choose your subjects</div>
                 <div className="bg-white w-[50%] p-4 relative h-[10rem] ">
         <Selection setCurrentStep={setCurrentStep} formData={formData} setError={setError} setFormData={setFormData} error={error}/>
+        {/* <Selection setCurrentStep={setCurrentStep} setFormData={(field,value)=>setFormData}/> */}
+
         </div>
         </div>
     )
