@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MdArrowDropDown } from "react-icons/md";
-import DropDown from "./dropDown";
+import DropDown from "./menu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import navData from "./metadata/navData";

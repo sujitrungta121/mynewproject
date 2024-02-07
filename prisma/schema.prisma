@@ -20,3 +20,28 @@ model user {
   password String? @db.VarChar(255)
   name String? @db.VarChar(255)
 }
+
+
+model joinUs{
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(255)
+  phoneNumber String @db.VarChar(255)
+  email String? @db.VarChar(255)
+  studentName String? @db.VarChar(255)
+  about String @db.VarChar(10000)
+ subjects Subject[]
+ interest Interest[]
+}
+
+
+model Subject {
+    id      Int     @id @default(autoincrement())
+    name    String  @db.VarChar(255)
+    joinUs  joinUs[]  // Define a many-to-many relationship with the joinUs model
+  }
+  
+  model Interest {
+    id      Int     @id @default(autoincrement())
+    name    String  @db.VarChar(255)
+    joinUs  joinUs[]  // Define a many-to-many relationship with the joinUs model
+  } 

@@ -5,6 +5,7 @@ import Modal from "react-modal"
 import { IoClose } from 'react-icons/io5';
 import { IoIosClose } from 'react-icons/io';
 import Login from "../loginForm"
+import { Email } from '@/app/common/sendinEnail';
 
 interface ErrorType {
   [key: string]: string; 
@@ -27,6 +28,7 @@ const ContactForm = ({ heading, description }: { heading: string; description: s
   const [error, setError] = useState<ErrorType>({});
   const [submitting, setSubmitting] = useState(false);
   const [openModal,setOpenModal]=useState(false)
+  const[submitted,setSubmitted]=useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setform({
@@ -74,6 +76,7 @@ const ContactForm = ({ heading, description }: { heading: string; description: s
               console.log(response);
               if (response.status === "200") {
                 console.log("form submitted")
+               setSubmitted(true);
             
                 setform(initialform);
            
@@ -105,6 +108,7 @@ const ContactForm = ({ heading, description }: { heading: string; description: s
         <span  className="text-center font-bold text-2xl text-green-900">Your Response has been recorded</span>
         </div>
       </Modal>
+
       <div>
         <div className="flex flex-col gap-2">
           {heading && <h2 className="text-xl font-bold">{heading}</h2>}

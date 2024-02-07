@@ -1,62 +1,75 @@
-// 'use server'
-// import excuteQuery from '@/app/common/connectDb';
 
-// const submitContact = async (formData: any) => {
-//     console.log(formData)
-   
-//   try {
-//     // const name = formData.get('name');
-//     // const email = formData.get('email');
-//     const name=formData.name;
-//     const email=formData.email
-//     console.log(name, email)
-//     const query = `INSERT INTO new_table (name, email) VALUES (?, ?)`;
-//     ;
-//     const values = [name, email];
-//     const result = await excuteQuery({ query, values });
-//     return { status: "200"}; 
-//   } catch (error) {
-//     console.error('Error inserting data:', error);
-//     return { status: "error" }; 
-//   }
-// };
 
-// export default submitContact;
 'use server'
 
-import { NextApiResponse,NextApiRequest } from "next";
-// import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import nodemailer from 'nodemailer';
 
+const prisma = new PrismaClient();
 
-// export default async function submitContact(
-// req:NextApiRequest,
-// res:NextApiResponse
-// ){
-//   const prisma=new PrismaClient();
-//   if(req.method==="GET"){
-//     const contact=await prisma.contact.findMany
-//     return res.send(contact)
-//   }
-//   else if(req.method==="POST"){
-//     res.status(201).send('POST')
-//   }
-// }
-import { Prisma, PrismaClient } from "@prisma/client";
+ const email=process.env.EMAIL;
+ const  pass=process.env.PASS
 
+ console.log(process.env.EMAIL,process.env.PASS,"email and password");
 
-export default async function submitContact(formData:any){
+export default async function submitContact(formData: any,error:any) {
+  
 
-  const prisma =new PrismaClient();
-  const contact=await prisma.contact.create({
-    data:{
-      name:formData?.name,
-      email:formData?.email,
-      message:formData?.message
-    },
-  })
+  try {
+    // Save form data to the database
+    const contact = await prisma.joinUs.create({
+      data: {
+        name: formData?.name,
+        email: formData?.email,
+        phoneNumber:formData?.phoneNumber,
+        about:formData?.about,
+        studentName:formData?.studentName
+        // message: formData?.message
+      },
+    });
 
- 
-  return {status:"200",contact}
+    // Send email notification
+    await sendEmail(formData);
+
+    return { status: "200", contact };
+  } catch (error) {
+    console.error('Error submitting contact form:', error);
+    return { status: "error",error };
+  }
+}
+
+async function sendEmail(formData: any) {
+  try {
+    // Create a nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user:email , // Your Gmail email address
+        pass:pass
+        // Your Gmail password or an application-specific password if you have 2-Step Verification enabled
+      }
+    });
+
+    console.log(transporter)
+
+    // Construct the email message
+    const mailOptions = {
+      from: email,
+      to: email,
+     
+    };
+
+    // Send the email
+    await transporter.sendMail({
+      ...mailOptions, 
+      subject: 'New form submission',
+      text: `New form submission:\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+      html:"<h1>Test title</h1>"
+
+    });
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
 }
 
 

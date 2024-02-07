@@ -16,7 +16,7 @@ import { FaAndroid } from "react-icons/fa6";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useEffect, useState } from "react";
-import DropDown from "./dropDown";
+import DropDown from "./menu";
 
 
 export default function Footer({ BackgroundColor }: { BackgroundColor: String }) 
